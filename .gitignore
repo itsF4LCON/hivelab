@@ -2,3 +2,4 @@ build/
 site/vm/
 site/daily/
 site/challenges.json
+.wrangler/
