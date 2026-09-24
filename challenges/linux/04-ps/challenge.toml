@@ -1,0 +1,18 @@
+title = "Nosy neighbors"
+difficulty = 1
+story = """
+A backup job is running on this machine as root. Whoever wrote it passed its secret upload token on the
+command line.
+
+On Linux, every user can see every running process, including its full command line. Find the token.
+"""
+hints = [
+  "`ps` lists running processes. `ps --help` or just `ps` shows what columns you get.",
+  "`ps -o pid,user,args` shows the full command line of every process. Look for something called backup.",
+  "`ps -o args | grep backup` narrows it down. The token is the flag.",
+]
+learned = """
+Command-line arguments are public: any user on the machine can read them with `ps`. That's why passwords
+and tokens belong in files with tight permissions or in environment variables, never in a command.
+Attackers who get any shell at all run `ps` right away to look for exactly this.
+"""

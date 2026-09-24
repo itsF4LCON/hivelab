@@ -1,0 +1,22 @@
+title = "Lock up the secrets"
+difficulty = 1
+root = true
+type = "check"
+story = """
+A web app lives in `/srv/app`, run by the `app` user. Some of its files hold secrets: the database password
+in `.env`, a private key in `deploy_key`, and a database dump in `backup.sql`. Right now every user on the
+server can read them.
+
+Fix the permissions so only the `app` user can read those three files. Don't break the app: `start.sh`
+must stay executable for `app`.
+"""
+hints = [
+  "`ls -la /srv/app` shows who owns each file and who can read it. `r` in the last three columns means everyone.",
+  "`chmod 600 file` means: owner can read and write, nobody else can do anything. You need doas, because the files belong to `app`.",
+  "`doas chmod 600 /srv/app/.env /srv/app/deploy_key /srv/app/backup.sql`, then check with `ls -la /srv/app`. Leave `start.sh` alone.",
+]
+learned = """
+World-readable secrets are one of the most common real-world leaks: any compromised service or user on the
+box can read them. `600` (owner only) for secrets and `700` for private folders is the habit to build.
+SSH even refuses to use a private key that others can read.
+"""

@@ -1,0 +1,36 @@
+title = "Pipes and counting"
+difficulty = 2
+type = "questions"
+story = """
+~/challenge/access.log is a day of traffic to a small website, in nginx's log format. Each line is one
+request: the visitor's IP, the time, what they asked for, the status code and their browser.
+
+Answer the questions by chaining small commands together with pipes (`|`), where each command's output
+becomes the next one's input.
+"""
+hints = [
+  "`wc -l` counts lines. `cat file | wc -l` or just `wc -l file`.",
+  "`awk '{print $1}' file` prints the first column (the IP). Pipe it into `sort -u` for unique values, then `wc -l` to count them.",
+  "The status code is column 9: `awk '$9 == 404 {print $1}' file | sort | uniq -c | sort -rn | head` counts 404s per IP.",
+]
+learned = """
+`cat`, `awk`, `sort`, `uniq -c`, `wc -l` and `head` chained with pipes answer almost any question about a
+log file. The IP with hundreds of 404s is a scanner: it asks for files like `/.env` and `/wp-login.php` that
+don't exist here, hoping one day they will.
+"""
+
+[[questions]]
+prompt = "How many requests are in the log?"
+answers = ["3000"]
+
+[[questions]]
+prompt = "How many different IP addresses visited?"
+answers = ["60"]
+
+[[questions]]
+prompt = "How many requests ended in a 404 (not found)?"
+answers = ["340"]
+
+[[questions]]
+prompt = "Which IP address caused the most 404s?"
+answers = ["203.0.113.66"]

@@ -1,0 +1,19 @@
+title = "Other people's notes"
+difficulty = 2
+story = """
+A notes app runs at http://127.0.0.1:8081. You're logged in, and your note is here:
+
+http://127.0.0.1:8081/notes?id=17
+
+Look closely at that URL. What happens if you change it? The admin's note has the flag.
+"""
+hints = [
+  "`curl 'http://127.0.0.1:8081/notes?id=17'` shows your note. Try another id.",
+  "The server never checks whether a note is yours. Notes are numbered, so try the low numbers.",
+  "`for i in $(seq 1 20); do curl -s \"http://127.0.0.1:8081/notes?id=$i\"; echo; done`",
+]
+learned = """
+This bug is called IDOR (Insecure Direct Object Reference): the server trusts the id in the URL without
+checking who's asking. It's simple, and it's everywhere: it has leaked medical records, invoices and
+private messages at big companies. Every request for data must check that the user is allowed to see it.
+"""

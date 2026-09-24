@@ -1,0 +1,18 @@
+title = "Caesar's secret"
+difficulty = 2
+story = """
+~/challenge/secret.txt was encrypted with a Caesar cipher: every letter is shifted the same number of places
+down the alphabet (with a shift of 3, `a` becomes `d`). Nobody told you the shift.
+
+There are only 25 possible shifts. Try them all.
+"""
+hints = [
+  "`tr` swaps letters: `tr 'a-z' 'd-za-c'` shifts every letter by 3. To undo a shift, swap the two sides.",
+  "The flag starts with `flag{`. Whatever shift turns the first four letters into `flag` is the right one.",
+  "A loop tries every shift: `a=abcdefghijklmnopqrstuvwxyz; for k in $(seq 1 25); do s=$(echo $a | cut -c$((k+1))-)$(echo $a | cut -c1-$k); tr $s $a < ~/challenge/secret.txt; done`",
+]
+learned = """
+A cipher with only 25 possible keys isn't a cipher: you can try them all in a second. That's called brute
+force, and it's why modern keys have more possibilities than there are atoms in the universe. The same idea
+breaks short passwords, which is why length matters more than anything.
+"""
