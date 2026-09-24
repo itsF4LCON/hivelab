@@ -3,6 +3,8 @@
 set -e
 cd "$(dirname "$0")"
 command -v docker >/dev/null || { echo "hivelab needs Docker: https://docs.docker.com/get-docker/" >&2; exit 1; }
+docker compose version >/dev/null 2>&1 || { echo "hivelab needs the Docker Compose plugin (on Arch: sudo pacman -S docker-compose docker-buildx)" >&2; exit 1; }
+docker info >/dev/null 2>&1 || { echo "Can't reach Docker. Start it (sudo systemctl start docker) and check you're allowed to use it (sudo usermod -aG docker \$USER, then log in again)." >&2; exit 1; }
 if [ "${1:-}" = reset ]; then
 	docker compose down -t 0
 	shift
