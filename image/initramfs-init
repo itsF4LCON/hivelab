@@ -1,0 +1,13 @@
+#!/bin/busybox sh
+/bin/busybox --install -s /bin
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+for m in netfs 9pnet 9pnet_virtio 9p; do insmod /lib/modules/$m.ko; done
+if ! mount -t 9p -o trans=virtio,version=9p2000.L,cache=loose host9p /sysroot; then
+	echo "Could not mount the root filesystem."
+	exec sh
+fi
+mount --move /dev /sysroot/dev
+umount /proc /sys
+exec switch_root /sysroot /sbin/init

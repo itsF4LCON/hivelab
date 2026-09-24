@@ -8,4 +8,4 @@ if [ "${1:-}" = reset ]; then
 	shift
 fi
 docker compose up -d --build --quiet-pull >/dev/null
-exec docker compose exec -u learner -w /home/learner box sh -lc 'cat /etc/motd; exec sh -l'
+exec docker compose exec -u learner -w /home/learner box sh -l

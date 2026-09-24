@@ -12,6 +12,14 @@ hash() { norm "$1" | sha256sum | cut -d' ' -f1; }
 current() { cat "$STATE/current" 2>/dev/null || { echo "No challenge started. Try: ${B}lab list${N}" >&2; exit 1; }; }
 meta() { case $1 in daily-*) echo "$LAB/daily/${1#daily-}/meta.json" ;; *) echo "$DB" ;; esac; }
 field() { jq -r --arg id "$1" ".[] | select(.id == \$id) | $2" "$(meta "$1")" 2>/dev/null; }
+wrap() {
+	w=$({ stty size </dev/tty; } 2>/dev/null | cut -d' ' -f2)
+	[ "${w:-0}" -gt 20 ] || w=100
+	sed 's/\*\*//g' | awk '/^$/ { if (p != "") print p; print ""; p = ""; next }
+		/^- / { if (p != "") print p; p = $0; next }
+		{ p = (p == "" ? $0 : p " " $0) }
+		END { if (p != "") print p }' | fold -s -w "$w"
+}
 solved() { grep -qx "$1" "$STATE/solved" 2>/dev/null; }
 
 usage() {
@@ -55,7 +63,7 @@ resolve() {
 info() {
 	id=$(current)
 	printf '\n%s%s%s  %s[%s]%s\n\n' "$B" "$(field "$id" .title)" "$N" "$D" "$id" "$N"
-	field "$id" .story | sed "s/\*\*//g"
+	field "$id" .story | wrap
 	echo
 	case $(field "$id" .type) in
 	flag) echo "${D}Find the flag, then: lab submit flag{...}${N}" ;;
@@ -73,7 +81,7 @@ win() {
 	solved "$id" || echo "$id" >>"$STATE/solved"
 	printf '\n%s%sSolved!%s %s\n\n' "$G" "$B" "$N" "$(field "$id" .title)"
 	printf '%sWhat you learned:%s\n' "$B" "$N"
-	field "$id" .learned
+	field "$id" .learned | wrap
 	printf '\n\033]7337;solved;%s\a' "$id"
 	echo
 }
@@ -144,6 +152,7 @@ answer) [ $# -ge 2 ] || { usage; exit 1; }; n=$1; shift; answer "$n" "$*" ;;
 check) check ;;
 reset) start "$(current)" ;;
 daily)
+	doas /usr/local/sbin/lab-root unpack
 	day=$(ls "$LAB/daily" 2>/dev/null | grep -E '^[0-9]{4}-[0-9]{2}-[0-9]{2}$' | sort | tail -1)
 	[ -n "$day" ] || { echo "No daily challenge in this box yet. Update the repo with: git pull" >&2; exit 1; }
 	start "daily-$day" ;;

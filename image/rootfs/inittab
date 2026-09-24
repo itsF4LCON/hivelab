@@ -1,0 +1,4 @@
+::sysinit:/usr/local/sbin/lab-boot
+ttyS0::respawn:/sbin/getty -n -l /usr/local/sbin/autologin 115200 ttyS0 xterm
+::ctrlaltdel:/sbin/reboot
+::shutdown:/bin/umount -a -r
