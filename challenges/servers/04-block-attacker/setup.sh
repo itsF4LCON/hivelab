@@ -1,7 +1,3 @@
-nft flush ruleset 2>/dev/null || true
-pkill socat 2>/dev/null || true
-ip netns del internet 2>/dev/null || true
-ip link del lab0 2>/dev/null || true
 
 pool="203.0.113.14 203.0.113.45 203.0.113.77 203.0.113.102 203.0.113.160 203.0.113.201 192.0.2.66 192.0.2.130 192.0.2.211"
 set -- $(for ip in $pool; do echo "$(od -An -N2 -tu2 /dev/urandom) $ip"; done | sort -n | awk '{print $2}')
@@ -9,7 +5,6 @@ bad="$1 $2 $3"
 low="$4 $5 $6"
 admin=198.51.100.7
 
-mkdir -p /var/lib/lab-secret && chmod 700 /var/lib/lab-secret
 echo "$bad" >/var/lib/lab-secret/block
 echo "$low $admin" >/var/lib/lab-secret/allow
 

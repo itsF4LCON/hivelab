@@ -1,0 +1,18 @@
+title = "Knock knock"
+difficulty = 2
+story = """
+This server is connected to a small office network: 10.50.0.0/24. A few machines live there, and one of them
+runs a service on a port somewhere between 1000 and 2000 that hands out the flag.
+
+Find which machines are up, find the open port, and connect to it.
+"""
+hints = [
+  "`nmap -sn 10.50.0.0/24` pings every address in the network and lists the ones that answer.",
+  "`nmap -p 1000-2000 <ip>` scans those ports on one machine. Scan each machine you found (you can list several IPs at once).",
+  "Connect to the open port with `nc <ip> <port>`.",
+]
+learned = """
+Host discovery (`nmap -sn`) and port scanning (`nmap -p`) are how you map a network: what's there and what it
+runs. Attackers do this first, and defenders should too, because you can't protect services you don't know
+exist. Only scan networks you own or have permission to test.
+"""

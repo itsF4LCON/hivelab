@@ -1,0 +1,18 @@
+title = "Borrowed powers"
+difficulty = 3
+story = """
+The flag is in /root/flag.txt, which only root can read. You're not root, and you can't use doas here.
+
+But an admin once "fixed" a problem by giving a program the setuid bit. A setuid program runs with its
+owner's permissions, whoever starts it. Find the one that shouldn't be there, and use it to read the flag.
+"""
+hints = [
+  "`find / -perm -4000 -type f 2>/dev/null` lists every setuid program on the system.",
+  "Most of them (like `su` and `doas`) belong there. One in /usr/local/bin doesn't. Run it with `--help` to see what it does.",
+  "`hexview` is a hex dump tool. Dump the flag file, then turn the hex back into text: `hexview /root/flag.txt | xxd -r`",
+]
+learned = """
+You just escalated your privileges: a setuid program that can read any file lets any user read *every* file.
+Finding a misconfigured setuid binary is one of the first things attackers (and pentesters) check after
+getting a shell. GTFOBins (gtfobins.github.io) lists hundreds of programs that can be abused this way.
+"""

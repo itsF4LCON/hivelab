@@ -1,0 +1,20 @@
+title = "Crack the hash"
+difficulty = 3
+story = """
+A website's user database leaked: ~/challenge/users.db. It doesn't store passwords, just their MD5 hashes.
+A hash is one-way: you can't turn it back into the password.
+
+But you can guess. ~/challenge/passwords.txt holds real passwords that bots tried on hive, a honeypot on the
+internet. Hash every guess and see which one matches the admin's hash. The flag is `flag{password}`.
+"""
+hints = [
+  "`printf %s 'hello' | md5sum` hashes a word. (`echo` would add a newline and give a different hash.)",
+  "Read the wordlist one line at a time with a loop: `while read -r p; do ...; done < ~/challenge/passwords.txt`",
+  "`h=$(grep admin ~/challenge/users.db | cut -d: -f2); while read -r p; do [ \"$(printf %s \"$p\" | md5sum | cut -d' ' -f1)\" = \"$h\" ] && echo \"$p\"; done < ~/challenge/passwords.txt`",
+]
+learned = """
+That's a dictionary attack, and it's how most leaked passwords get cracked: not by reversing hashes, but by
+hashing millions of likely guesses. Real tools (hashcat, John the Ripper) try billions per second. Plain MD5
+is far too fast for passwords; sites should use slow hashes like bcrypt or Argon2, and you should use
+passwords that aren't on any list.
+"""

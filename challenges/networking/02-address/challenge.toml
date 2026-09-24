@@ -1,0 +1,35 @@
+title = "Where am I?"
+difficulty = 1
+type = "questions"
+story = """
+Every machine on a network has an IP address, and a subnet that says which other addresses are "local",
+meaning reachable directly without going through a router.
+
+This server has a network card called `lab1`. Find out how it's set up.
+"""
+hints = [
+  "`ip addr` lists every network interface and its addresses. `ip addr show lab1` shows just that one.",
+  "An address like `10.0.0.5/24` means: IP `10.0.0.5`, and the first 24 bits are the network. The number after the `/` is the prefix length.",
+  "A /27 leaves 32 - 27 = 5 bits for hosts: 2^5 = 32 addresses. The first is the network address and the last is broadcast, so 30 are usable. The network address is the IP with the host bits set to 0.",
+]
+learned = """
+`ip addr` shows your addresses, and the prefix length (`/27`) tells you how big your network is. Subnetting
+decides who can talk to whom directly, which is why attackers who get onto one machine look at its subnet
+first: it's the list of neighbors to attack next.
+"""
+
+[[questions]]
+prompt = "What IPv4 address does lab1 have?"
+answers = ["172.20.14.37"]
+
+[[questions]]
+prompt = "What's its prefix length? (the number after the /)"
+answers = ["27", "/27"]
+
+[[questions]]
+prompt = "What's the network address of that subnet?"
+answers = ["172.20.14.32", "172.20.14.32/27"]
+
+[[questions]]
+prompt = "How many usable host addresses does that subnet have?"
+answers = ["30"]

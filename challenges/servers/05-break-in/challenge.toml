@@ -1,0 +1,37 @@
+title = "Somebody got in"
+difficulty = 2
+type = "questions"
+story = """
+Bots try to log in to every server all day, and it's usually harmless. But last night one of them got in.
+`~/challenge/auth.log` has the whole story. Work it out like an incident responder.
+"""
+hints = [
+  "Successful logins say `Accepted`. `grep Accepted ~/challenge/auth.log` shows every one. Which of them isn't the admin?",
+  "Once you know the IP, `grep 203.0.113. ~/challenge/auth.log | tail` and `grep -c` help you count. Then look at what happened right after the login.",
+  "`grep -A 10 'Accepted password' ~/challenge/auth.log` shows the 10 lines after each password login. Look for sudo and useradd.",
+]
+learned = """
+You just did incident response: find the successful login in a sea of failures, then follow what the attacker
+did next. Their account `sysupdate` has UID 0, which makes it a second root account with an innocent name,
+a classic backdoor. The fix: remove it, change every password, and turn off password logins.
+"""
+
+[[questions]]
+prompt = "Which IP address broke in?"
+answers = ["203.0.113.50"]
+
+[[questions]]
+prompt = "Which account did it log in to?"
+answers = ["backup"]
+
+[[questions]]
+prompt = "How many times did that IP fail before it got in?"
+answers = ["64"]
+
+[[questions]]
+prompt = "At what time did it log in? (HH:MM:SS)"
+answers = ["03:14:07"]
+
+[[questions]]
+prompt = "What's the name of the account the attacker created?"
+answers = ["sysupdate"]

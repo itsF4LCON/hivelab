@@ -10,5 +10,7 @@ chown learner:learner /var/lib/lab
 install -D -m 755 lab /usr/local/bin/lab
 install -D -m 755 lab-root /usr/local/sbin/lab-root
 install -D -m 644 lib.sh /opt/lab/lib.sh
+install -D -m 644 web.sh /opt/lab/web.sh
 install -D -m 644 motd /etc/motd
 install -D -m 644 profile.sh /etc/profile.d/lab.sh
+ssh-keygen -A >/dev/null

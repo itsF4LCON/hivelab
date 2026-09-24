@@ -1,0 +1,18 @@
+title = "Worth a thousand words"
+difficulty = 1
+story = """
+~/challenge/holiday.png looks like an ordinary picture. But the file is bigger than it should be: someone hid
+text inside it.
+
+You can't view images in a terminal, but you don't need to.
+"""
+hints = [
+  "`file ~/challenge/holiday.png` tells you what a file really is. `ls -l` shows its size.",
+  "`strings` prints every readable piece of text inside any file, even a binary one like an image.",
+  "`strings ~/challenge/holiday.png | grep flag`",
+]
+learned = """
+Files can carry data their viewers never show: text appended after the end of an image, metadata like GPS
+location in photos, or whole ZIP archives glued onto a picture. `file`, `strings` and `xxd` are the
+first tools of forensics: never trust what a file looks like, look at what's in it.
+"""

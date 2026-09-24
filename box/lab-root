@@ -12,11 +12,23 @@ valid() {
 	[ -n "$(jq -r --arg id "$1" '.[] | select(.id == $id) | .id' "$(meta "$1")" 2>/dev/null)" ]
 }
 
+cleanup() {
+	if [ -f /run/lab-daemons ]; then
+		while read -r pid; do kill -- "-$pid" 2>/dev/null || kill "$pid" 2>/dev/null || true; done </run/lab-daemons
+		rm -f /run/lab-daemons
+	fi
+	for ns in $(ip netns list 2>/dev/null | awk '{print $1}'); do ip netns del "$ns"; done
+	for link in $(ip -o link show 2>/dev/null | awk -F': ' '{print $2}' | cut -d@ -f1 | grep '^lab'); do ip link del "$link" 2>/dev/null || true; done
+	nft flush ruleset 2>/dev/null || true
+	rm -f /usr/local/bin/hexview /usr/local/bin/backup-job /root/flag.txt
+}
+
 case ${1:-} in
 start)
 	id=${2:-}
 	valid "$id" || { echo "unknown challenge" >&2; exit 1; }
-	rm -rf /home/learner/challenge "$STATE/flag.sha256" "$STATE/hints" "$STATE/answered"
+	cleanup
+	rm -rf /home/learner/challenge "$STATE/flag.sha256" "$STATE/hints" "$STATE/answered" /var/lib/lab-secret
 	mkdir -p /home/learner/challenge
 	if [ "$(jq -r --arg id "$id" '.[] | select(.id == $id) | .root' "$(meta "$id")")" = true ]; then
 		echo "permit nopass learner" >/etc/doas.d/challenge.conf

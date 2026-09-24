@@ -1,0 +1,16 @@
+title = "Needle in a haystack"
+difficulty = 1
+story = """
+~/challenge/app.log has 20,000 lines. One of them contains the flag. Reading it all would take an hour.
+
+Let the computer search for you.
+"""
+hints = [
+  "`grep` prints every line that contains a word. Try `grep ERROR ~/challenge/app.log | head`.",
+  "Flags look like `flag{...}`. Search for that: `grep flag ~/challenge/app.log`.",
+  "`grep -o 'flag{[^}]*}' ~/challenge/app.log` prints only the flag itself.",
+]
+learned = """
+`grep` searches huge files in a fraction of a second, and `grep -o` prints only the part that matches.
+It's the tool you'll use most when reading logs, and it's how you find a single attacker in millions of lines.
+"""

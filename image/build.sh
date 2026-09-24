@@ -49,7 +49,8 @@ install -m 755 "$here/initramfs-init" "$init/init"
 cp "$root/boot/vmlinuz-virt" "$out/bzImage"
 rm -rf "$root/boot"
 
-python3 "$here/tools/fs2json.py" --out "$out/fs.json" "$root"
+py=${PYTHON:-python3}
+"$py" "$here/tools/fs2json.py" --zstd --out "$out/fs.json" "$root"
 mkdir -p "$out/fs"
-python3 "$here/tools/copy-to-sha256.py" "$root" "$out/fs"
+"$py" "$here/tools/copy-to-sha256.py" --zstd "$root" "$out/fs"
 echo "files: $(ls "$out/fs" | wc -l), size: $(du -sh "$out" | cut -f1)"

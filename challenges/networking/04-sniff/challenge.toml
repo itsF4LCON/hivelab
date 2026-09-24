@@ -1,0 +1,21 @@
+title = "Listen in"
+difficulty = 2
+root = true
+type = "flag"
+story = """
+Somewhere on the office network (reached through the `lab0` interface), an old script logs in to a file
+server every few seconds. It uses a protocol from the 1980s that sends everything, password included, as
+plain text.
+
+Capture the traffic and read the password. It's the flag.
+"""
+hints = [
+  "`tcpdump` captures network traffic. It needs root: `doas tcpdump -n -i lab0`. Stop it with Ctrl+C. (`-n` skips looking up hostnames, which is slow here.)",
+  "By default tcpdump only shows packet headers. `-A` prints the contents of each packet as text.",
+  "`doas tcpdump -n -i lab0 -A -l | grep PASS` shows just the login lines.",
+]
+learned = """
+Anyone on the same network path can read unencrypted traffic: FTP, Telnet, plain HTTP and old mail protocols
+all send passwords in the clear. That's why everything moved to TLS (HTTPS, SSH, SFTP). When you see a
+login over plain text in a capture, that password is compromised.
+"""

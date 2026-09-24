@@ -1,0 +1,20 @@
+title = "Keys, not passwords"
+difficulty = 2
+root = true
+type = "check"
+story = """
+An SSH server is running on port 2222, and it only accepts keys, no passwords. Your job: make it possible for
+you (the `learner` user) to log in as the `deploy` user with an SSH key.
+
+Test it with: `ssh -p 2222 deploy@127.0.0.1`
+"""
+hints = [
+  "Make a key pair as yourself: `ssh-keygen -t ed25519` (press Enter for every question). The public half is `~/.ssh/id_ed25519.pub`.",
+  "The server lets in any key listed in `/home/deploy/.ssh/authorized_keys`. Create the folder and file with doas, and copy your public key into it.",
+  "sshd ignores keys if the files are too open or owned by the wrong user. `doas chown -R deploy:deploy /home/deploy/.ssh`, `doas chmod 700 /home/deploy/.ssh`, `doas chmod 600 /home/deploy/.ssh/authorized_keys`",
+]
+learned = """
+An SSH key pair has a private half that never leaves your machine and a public half you copy to servers.
+Unlike a password, it can't be guessed by the bots in hive's logs. sshd's strict permission checks
+(`StrictModes`) exist because if someone else could write to `authorized_keys`, they could add their own key.
+"""

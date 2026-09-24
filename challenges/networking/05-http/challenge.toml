@@ -1,0 +1,19 @@
+title = "Speak HTTP"
+difficulty = 2
+story = """
+A website is running on this machine at http://127.0.0.1:8080. Its front page says there's nothing to see.
+There is.
+
+Websites tell search engines which pages *not* to show in a file called `/robots.txt`. Start there, and use
+`curl` to talk to the site directly.
+"""
+hints = [
+  "`curl http://127.0.0.1:8080/robots.txt` shows the file. Visit the page it hides.",
+  "The hidden page only lets in a certain browser. Every request says which browser it comes from in the User-Agent header. `curl -v` shows the headers you send.",
+  "`curl -A 'the-browser-name' http://127.0.0.1:8080/the-page/` sends any User-Agent you like.",
+]
+learned = """
+`robots.txt` is public, so listing secret pages in it just advertises them. And every header in a request
+(User-Agent, cookies, Referer) is chosen by the client. A server that trusts a header for access control
+has no access control. `curl` lets you see and change everything a browser hides.
+"""
