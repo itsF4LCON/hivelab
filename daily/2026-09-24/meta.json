@@ -1,0 +1,49 @@
+[
+ {
+  "id": "daily-2026-09-24",
+  "track": "daily",
+  "title": "Daily: 2026-09-24",
+  "difficulty": 2,
+  "root": false,
+  "type": "questions",
+  "story": "These logs are real. They come from hive, a honeypot on the internet, between 11:48 and 12:15 UTC on 2026-09-24.\nEvery line is a bot trying to break in. (IP addresses are replaced with example addresses, but everything else is what really happened.)\n\nYour files in ~/challenge:\n- `auth.log`: SSH login attempts, exactly as a real server logs them\n- `honeypot-capture.txt`: the passwords the bots tried (only a honeypot can see these)\n- `countries.txt`: which country each IP is in\n- `access.log`: web requests, in nginx's log format",
+  "hints": [
+   "`grep`, `sort`, `uniq -c` and `sort -rn` answer most questions. Try `grep 'Failed password' ~/challenge/auth.log | head`.",
+   "Count per IP: `grep -o 'from [0-9.]*' ~/challenge/auth.log | sort | uniq -c | sort -rn`. Swap the pattern for usernames: `grep -o 'for [a-z ]*from'`.",
+   "`awk '{print $3}' ~/challenge/honeypot-capture.txt | sort | uniq -c | sort -rn` counts usernames, `$4` counts passwords. For countries, look each IP up in countries.txt with `grep`."
+  ],
+  "learned": "`198.51.100.166` alone made 68 of the 95 attempts, a typical brute-force bot working through a password list. `ubuntu` was the favorite username. Bots go for accounts that exist on almost every server. `/.env`: the scanner was looking for an `.env` file, where apps keep database passwords and API keys.\n\nIn the last 24 hours hive caught 6,125 attempts from 76 networks.\nCome back tomorrow for new logs, or see them live at https://xivlabs.tech/#attacks.",
+  "questions": [
+   {
+    "prompt": "Which IP address had the most failed SSH logins in auth.log?",
+    "sha256": [
+     "9d99776b6bc8c0590d662a9c565fe2156eff221005b4129f7c2d02f6b9656e29"
+    ]
+   },
+   {
+    "prompt": "Which username did the bots try most often?",
+    "sha256": [
+     "7804a56a5c7636cc05814736f44139e32920810d3bd51aa099a5df932e754ce9"
+    ]
+   },
+   {
+    "prompt": "How many different IP addresses tried to log in over SSH?",
+    "sha256": [
+     "4b227777d4dd1fc61c6f884f48641d02b4d121d3fd328cb08b5531fcacdabf8a"
+    ]
+   },
+   {
+    "prompt": "Use countries.txt: which country (two-letter code) sent the most SSH attempts?",
+    "sha256": [
+     "79adb2a2fce5c6ba215fe5f27f532d4e7edbac4b6a5e09e1ef3a08084a904621"
+    ]
+   },
+   {
+    "prompt": "Use access.log: which path (other than /) did the web scanner request?",
+    "sha256": [
+     "aef81e7735de8f42b73e111497498c8b59875ae9cc6588b388a9ffc8f9bba462"
+    ]
+   }
+  ]
+ }
+]

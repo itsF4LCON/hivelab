@@ -5,7 +5,12 @@ LAB=/opt/lab
 STATE=/var/lib/lab
 DB="$LAB/challenges.json"
 
-valid() { [ -n "$(jq -r --arg id "$1" '.[] | select(.id == $id) | .id' "$DB")" ]; }
+dir() { case $1 in daily-*) echo "$LAB/daily/${1#daily-}" ;; *) echo "$LAB/c/$1" ;; esac; }
+meta() { case $1 in daily-*) echo "$(dir "$1")/meta.json" ;; *) echo "$DB" ;; esac; }
+valid() {
+	case $1 in *[!a-z0-9-]* | "") return 1 ;; esac
+	[ -n "$(jq -r --arg id "$1" '.[] | select(.id == $id) | .id' "$(meta "$1")" 2>/dev/null)" ]
+}
 
 case ${1:-} in
 start)
@@ -13,21 +18,22 @@ start)
 	valid "$id" || { echo "unknown challenge" >&2; exit 1; }
 	rm -rf /home/learner/challenge "$STATE/flag.sha256" "$STATE/hints" "$STATE/answered"
 	mkdir -p /home/learner/challenge
-	if [ "$(jq -r --arg id "$id" '.[] | select(.id == $id) | .root' "$DB")" = true ]; then
+	if [ "$(jq -r --arg id "$id" '.[] | select(.id == $id) | .root' "$(meta "$id")")" = true ]; then
 		echo "permit nopass learner" >/etc/doas.d/challenge.conf
 	else
 		rm -f /etc/doas.d/challenge.conf
 	fi
 	cd /home/learner/challenge
-	LAB_FILES="$LAB/c/$id/files" STATE="$STATE" sh -eu -c ". $LAB/lib.sh; . $LAB/c/$id/setup.sh"
+	d=$(dir "$id")
+	LAB_FILES="$d/files" STATE="$STATE" sh -eu -c ". $LAB/lib.sh; . $d/setup.sh"
 	chown -R learner:learner /home/learner/challenge
 	echo "$id" >"$STATE/current"
 	chown learner:learner "$STATE/current"
 	;;
 check)
 	id=$(cat "$STATE/current")
-	valid "$id" && [ -x "$LAB/c/$id/check.sh" ] || exit 1
-	sh -eu -c ". $LAB/lib.sh; . $LAB/c/$id/check.sh"
+	valid "$id" && [ -f "$(dir "$id")/check.sh" ] || exit 1
+	sh -eu -c ". $LAB/lib.sh; . $(dir "$id")/check.sh"
 	;;
 *)
 	echo "usage: lab-root start <id> | check" >&2

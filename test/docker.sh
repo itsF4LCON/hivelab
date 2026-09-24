@@ -13,4 +13,12 @@ for solve in challenges/*/*/solve.sh; do
 	docker exec "$c" sh /tmp/in-box.sh "$id" /tmp/solve.sh || fail=1
 	docker rm -f "$c" >/dev/null
 done
+for day in $(ls -d daily/2*/ 2>/dev/null | sort | tail -3); do
+	[ -f "$day/meta.json" ] || continue
+	c=$(docker run -d -v "$PWD/$day:/opt/lab/daily/$(basename "$day"):ro" hivelab)
+	docker cp -q test/solve-daily.sh "$c:/tmp/solve-daily.sh"
+	docker exec "$c" su learner -s /bin/sh -c "cd ~ && sh /tmp/solve-daily.sh" >/dev/null
+	if docker exec "$c" grep -qx "daily-$(basename "$day")" /var/lib/lab/solved; then echo "ok   daily-$(basename "$day")"; else echo "FAIL daily-$(basename "$day")"; fail=1; fi
+	docker rm -f "$c" >/dev/null
+done
 exit $fail

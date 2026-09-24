@@ -3,5 +3,6 @@
 
   lab list       see all challenges
   lab start 1    start the first one
+  lab daily      today's challenge, from real attacks
   lab hint       stuck? get a hint
 
