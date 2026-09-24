@@ -1,0 +1,16 @@
+title = "Hidden in plain sight"
+difficulty = 1
+story = """
+Someone left a flag somewhere in ~/challenge. It's not in any file you can see with a plain `ls`.
+
+On Linux, a file whose name starts with a dot is hidden. Find it.
+"""
+hints = [
+  "`ls` hides dotfiles. Look at `ls --help` for an option that shows everything.",
+  "`ls -la` shows hidden files. The flag might be a few folders deep: use `cd` to move around.",
+  "`find ~/challenge -name '.*' -type f` lists every hidden file. Then `cat` it.",
+]
+learned = """
+Files starting with `.` are hidden from `ls` but not protected in any way. `ls -a` shows them, and
+`find` searches a whole tree at once. Attackers hide tools in dotfiles (like `/tmp/.x`) for exactly this reason.
+"""

@@ -1,0 +1,16 @@
+title = "Peel the onion"
+difficulty = 2
+story = """
+We intercepted ~/challenge/message.txt. It's the flag, hidden under three layers of encoding. Encoding isn't
+encryption: there's no key, you just have to recognize each layer and undo it.
+"""
+hints = [
+  "Look at the characters. Letters, digits, `+`, `/` and `=` at the end usually means base64: `base64 -d`.",
+  "The next layer only uses 0-9 and a-f: that's hex. `xxd -r -p` turns hex back into text.",
+  "The last layer looks like a flag with the letters shifted. That's ROT13: `tr 'a-zA-Z' 'n-za-mN-ZA-M'`.",
+]
+learned = """
+base64, hex and ROT13 are encodings, not encryption. Anyone can reverse them. Malware and phishing kits use
+layers like this to hide from simple scanners, so recognizing them on sight is a core skill (CyberChef is great
+for this).
+"""

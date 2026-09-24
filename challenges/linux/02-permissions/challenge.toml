@@ -1,0 +1,16 @@
+title = "Permission denied"
+difficulty = 1
+story = """
+The flag is in ~/challenge/flag.txt, and it's yours, but `cat` says "Permission denied".
+
+Every file has permissions for its owner, its group and everyone else. Fix the permissions so you can read it.
+"""
+hints = [
+  "Run `ls -l ~/challenge`. The first column (`----------`) shows who can read (r), write (w) and execute (x).",
+  "The owner of a file can always change its permissions with `chmod`.",
+  "`chmod u+r ~/challenge/flag.txt` gives the owner (u) read (r) permission.",
+]
+learned = """
+`ls -l` shows permissions as `rwx` for owner, group and others, and `chmod` changes them. Wrong permissions
+are one of the most common server mistakes: a world-readable `.env` or SSH key hands attackers the keys.
+"""

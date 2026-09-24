@@ -1,0 +1,145 @@
+#!/bin/sh
+set -eu
+
+LAB=/opt/lab
+STATE=/var/lib/lab
+DB="$LAB/challenges.json"
+
+B=$(printf '\033[1m'); D=$(printf '\033[2m'); G=$(printf '\033[32m'); R=$(printf '\033[31m'); N=$(printf '\033[0m')
+
+norm() { printf %s "$1" | tr 'A-Z' 'a-z' | sed 's/^[[:space:]]*//;s/[[:space:]]*$//'; }
+hash() { norm "$1" | sha256sum | cut -d' ' -f1; }
+current() { cat "$STATE/current" 2>/dev/null || { echo "No challenge started. Try: ${B}lab list${N}" >&2; exit 1; }; }
+field() { jq -r --arg id "$1" ".[] | select(.id == \$id) | $2" "$DB"; }
+solved() { grep -qx "$1" "$STATE/solved" 2>/dev/null; }
+
+usage() {
+	cat <<EOF
+${B}lab${N}: learn cybersecurity by doing
+
+  lab list              all challenges
+  lab start <id|nr>     start a challenge
+  lab info              show the current challenge again
+  lab hint              get the next hint (3 per challenge)
+  lab submit <flag>     submit a flag
+  lab answer <nr> <x>   answer question <nr>
+  lab check             check a task challenge
+  lab reset             start the current challenge over
+EOF
+}
+
+list() {
+	jq -r '.[] | [.id, .track, .title, .difficulty] | @tsv' "$DB" | {
+		n=0; last=""
+		while IFS="$(printf '\t')" read -r id track title diff; do
+			n=$((n + 1))
+			[ "$track" != "$last" ] && printf '\n%s%s%s\n' "$B" "$track" "$N" && last=$track
+			mark="  "; solved "$id" && mark="${G}✓${N} "
+			printf '  %s%2d  %-34s %s%s%s\n' "$mark" "$n" "$title" "$D" "$(printf '%*s' "$diff" '' | tr ' ' '*')" "$N"
+		done
+		echo
+	}
+}
+
+resolve() {
+	case $1 in
+	*[!0-9]*) id=$1 ;;
+	*) id=$(jq -r --argjson n "$1" '.[$n - 1].id // empty' "$DB") ;;
+	esac
+	[ -n "$id" ] && [ -n "$(field "$id" .id)" ] || { echo "${R}No challenge '$1'.${N} Try: lab list" >&2; exit 1; }
+	echo "$id"
+}
+
+info() {
+	id=$(current)
+	printf '\n%s%s%s  %s[%s]%s\n\n' "$B" "$(field "$id" .title)" "$N" "$D" "$id" "$N"
+	field "$id" .story | sed "s/\*\*//g"
+	echo
+	case $(field "$id" .type) in
+	flag) echo "${D}Find the flag, then: lab submit flag{...}${N}" ;;
+	check) echo "${D}When you're done: lab check${N}" ;;
+	questions)
+		field "$id" '.questions | to_entries[] | "  \(.key + 1). \(.value.prompt)"'
+		echo "${D}Answer with: lab answer <nr> <answer>${N}" ;;
+	esac
+	[ "$(field "$id" .root)" = true ] && echo "${D}You can use doas (like sudo) in this challenge.${N}"
+	echo
+}
+
+win() {
+	id=$1
+	solved "$id" || echo "$id" >>"$STATE/solved"
+	printf '\n%s%sSolved!%s %s\n\n' "$G" "$B" "$N" "$(field "$id" .title)"
+	printf '%sWhat you learned:%s\n' "$B" "$N"
+	field "$id" .learned
+	printf '\n\033]7337;solved;%s\a' "$id"
+	echo
+}
+
+hint() {
+	id=$(current)
+	n=$(cat "$STATE/hints" 2>/dev/null || echo 0)
+	[ "$n" -ge 3 ] && n=2
+	printf '%sHint %d/3:%s %s\n' "$B" $((n + 1)) "$N" "$(field "$id" ".hints[$n]")"
+	echo $((n + 1)) >"$STATE/hints"
+}
+
+submit() {
+	id=$(current)
+	[ "$(field "$id" .type)" = flag ] || { echo "This challenge isn't solved with a flag. Try: lab info" >&2; exit 1; }
+	if [ "$(hash "$1")" = "$(cat "$STATE/flag.sha256" 2>/dev/null)" ]; then
+		win "$id"
+	else
+		echo "${R}Not the flag.${N} Stuck? lab hint"
+		exit 1
+	fi
+}
+
+answer() {
+	id=$(current)
+	count=$(field "$id" '.questions | length')
+	case $1 in *[!0-9]* | "") echo "Usage: lab answer <nr> <answer>" >&2; exit 1 ;; esac
+	[ "$1" -ge 1 ] && [ "$1" -le "$count" ] || { echo "Question $1 doesn't exist." >&2; exit 1; }
+	h=$(hash "$2")
+	if jq -e --arg id "$id" --argjson i "$(($1 - 1))" --arg h "$h" \
+		'.[] | select(.id == $id) | .questions[$i].sha256 | index($h)' "$DB" >/dev/null; then
+		echo "${G}Correct.${N}"
+		grep -qx "$1" "$STATE/answered" 2>/dev/null || echo "$1" >>"$STATE/answered"
+		[ "$(sort -u "$STATE/answered" | wc -l)" -eq "$count" ] && win "$id"
+	else
+		echo "${R}Not quite.${N} Stuck? lab hint"
+		exit 1
+	fi
+	return 0
+}
+
+check() {
+	id=$(current)
+	[ "$(field "$id" .type)" = check ] || { echo "This challenge isn't a task. Try: lab info" >&2; exit 1; }
+	if doas /usr/local/sbin/lab-root check; then
+		win "$id"
+	else
+		echo "${R}Not done yet.${N} Stuck? lab hint"
+		exit 1
+	fi
+}
+
+start() {
+	id=$(resolve "$1")
+	doas /usr/local/sbin/lab-root start "$id"
+	info
+}
+
+cmd=${1:-help}
+[ $# -gt 0 ] && shift
+case $cmd in
+list | ls) list ;;
+start) [ $# -eq 1 ] || { usage; exit 1; }; start "$1" ;;
+info) info ;;
+hint) hint ;;
+submit) [ $# -ge 1 ] || { usage; exit 1; }; submit "$*" ;;
+answer) [ $# -ge 2 ] || { usage; exit 1; }; n=$1; shift; answer "$n" "$*" ;;
+check) check ;;
+reset) start "$(current)" ;;
+*) usage ;;
+esac

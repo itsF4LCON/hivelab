@@ -1,0 +1,22 @@
+title = "Shut them out"
+difficulty = 2
+root = true
+type = "check"
+story = """
+Bots are hammering this server's SSH. Read `~/challenge/auth.log` and find every IP address with **10 or
+more** failed logins.
+
+Then block those addresses with an nftables firewall rule, so they can't reach the server at all.
+
+Careful: you (the admin) log in from `198.51.100.7`. If you block yourself, you're locked out.
+"""
+hints = [
+  "Failed logins look like `Failed password for ... from <ip> port ...`. `grep 'Failed password' ~/challenge/auth.log` shows them all.",
+  "Count per IP: `grep 'Failed password' ~/challenge/auth.log | grep -o 'from [0-9.]*' | sort | uniq -c | sort -rn`",
+  "Make a table and chain, then one drop rule per IP: `doas nft add table inet filter`, `doas nft add chain inet filter input '{ type filter hook input priority 0; }'`, `doas nft add rule inet filter input ip saddr { 1.2.3.4, 5.6.7.8 } drop`",
+]
+learned = """
+You went from log to firewall rule, which is exactly what fail2ban automates: it watches `auth.log` and bans
+IPs that fail too often. Always check who you're about to block. Locking out your own admin IP is a classic
+mistake, and on a remote server it means driving to the data center.
+"""
