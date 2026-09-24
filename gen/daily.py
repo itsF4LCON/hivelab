@@ -144,6 +144,7 @@ Come back tomorrow for new logs, or see them live at https://xivlabs.tech/#attac
         ],
         "learned": learned,
         "questions": [{"prompt": q, "sha256": [sha(a) for a in answers]} for q, answers in questions],
+        "files": sorted(f.name for f in files.iterdir()),
     }
     (out / "meta.json").write_text(json.dumps([meta], indent=1))
     (out / "setup.sh").write_text('cp "$LAB_FILES"/* .\n')

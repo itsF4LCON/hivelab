@@ -30,13 +30,26 @@ start)
 	echo "$id" >"$STATE/current"
 	chown learner:learner "$STATE/current"
 	;;
+unpack)
+	inbox=$LAB/inbox/daily.json
+	[ -f "$inbox" ] || exit 0
+	day=$(jq -r .date "$inbox")
+	case $day in [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]) ;; *) exit 1 ;; esac
+	d=$LAB/daily/$day
+	rm -rf "$d" && mkdir -p "$d/files"
+	jq '[.meta]' "$inbox" >"$d/meta.json"
+	echo 'cp "$LAB_FILES"/* .' >"$d/setup.sh"
+	jq -r '.files | keys[]' "$inbox" | grep -E '^[a-z][a-z.-]*$' | while read -r f; do
+		jq -j --arg f "$f" '.files[$f]' "$inbox" >"$d/files/$f"
+	done
+	;;
 check)
 	id=$(cat "$STATE/current")
 	valid "$id" && [ -f "$(dir "$id")/check.sh" ] || exit 1
 	sh -eu -c ". $LAB/lib.sh; . $(dir "$id")/check.sh"
 	;;
 *)
-	echo "usage: lab-root start <id> | check" >&2
+	echo "usage: lab-root start <id> | check | unpack" >&2
 	exit 1
 	;;
 esac

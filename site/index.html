@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>hivelab</title>
+<meta name="description" content="Learn cybersecurity on a real Linux machine that runs in your browser. Linux, networking, servers and CTF challenges, plus a daily challenge made from real attacks.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23000'/%3E%3Cpath d='M8 11l6 5-6 5M16 22h8' stroke='%23edeae2' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xterm/xterm@6.0.0/css/xterm.css">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="bar">
+  <a class="brand" href="#/">hivelab</a>
+  <nav>
+    <a href="https://github.com/itsF4LCON/hivelab">GitHub</a>
+    <a href="https://xivlabs.tech">xivlabs.tech</a>
+  </nav>
+</header>
+
+<main id="home" hidden>
+  <section class="intro">
+    <h1>Learn cybersecurity on a real Linux machine, right in your browser.</h1>
+    <p>No install and no account. Every challenge runs on a small Linux server inside this page, and you solve it by typing real commands.</p>
+  </section>
+
+  <section class="daily" id="daily" hidden>
+    <div class="daily-text">
+      <h2>Today's attacks</h2>
+      <p id="daily-summary"></p>
+      <a class="button" id="daily-start" href="#/">Investigate today's logs</a>
+    </div>
+    <pre class="log" id="daily-log" aria-label="A few lines of today's auth.log"></pre>
+  </section>
+
+  <section class="tracks" id="tracks" aria-label="Challenges"></section>
+
+  <section class="local">
+    <h2>Prefer your own machine?</h2>
+    <p>The same challenges run in Docker. Clone the repo and start a shell in the box:</p>
+    <pre class="cmd">git clone https://github.com/itsF4LCON/hivelab
+cd hivelab && ./lab</pre>
+  </section>
+</main>
+
+<main id="play" hidden>
+  <aside class="brief">
+    <a class="back" href="#/">All challenges</a>
+    <h1 id="c-title"></h1>
+    <p class="meta" id="c-meta"></p>
+    <div class="story" id="c-story"></div>
+    <ol class="questions" id="c-questions" hidden></ol>
+    <p class="how" id="c-how"></p>
+    <div class="hints">
+      <button type="button" id="hint">Show a hint</button>
+      <ol id="hint-list"></ol>
+    </div>
+    <div class="learned" id="c-learned" hidden>
+      <h2>Solved. Here's what you learned</h2>
+      <div id="c-learned-text"></div>
+      <a class="button" id="next" href="#/">Next challenge</a>
+    </div>
+  </aside>
+  <section class="machine" aria-label="Terminal">
+    <div class="machine-bar">
+      <span id="vm-status">Starting the machine</span>
+      <button type="button" id="restart">Start over</button>
+    </div>
+    <div class="screen">
+      <div id="terminal"></div>
+      <div class="boot" id="boot"><span id="boot-text">Booting Linux</span></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
