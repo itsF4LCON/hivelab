@@ -6,5 +6,6 @@ services:
     image: hivelab
     hostname: server
     cap_add: [NET_ADMIN, SYS_ADMIN]
+    security_opt: [apparmor=unconfined]
     volumes:
       - ./daily:/opt/lab/daily:ro

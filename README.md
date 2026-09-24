@@ -96,5 +96,5 @@ server code, and progress is kept in `localStorage`.
 
 ## Credits
 
-[v86](https://github.com/copy/v86) (BSD-2-Clause; `image/tools` and `image/bios` come from it),
+[v86](https://github.com/copy/v86) (BSD-2-Clause; `image/tools` comes from it), SeaBIOS and VGABIOS in `image/bios` (LGPL),
 [Alpine Linux](https://alpinelinux.org) and [xterm.js](https://xtermjs.org).
