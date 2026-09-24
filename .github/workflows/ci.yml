@@ -1,0 +1,13 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  challenges:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - run: python3 gen/build.py challenges build/lab
+      - run: sh test/docker.sh

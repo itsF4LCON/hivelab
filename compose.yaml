@@ -1,0 +1,10 @@
+services:
+  box:
+    build:
+      context: .
+      dockerfile: box/Dockerfile
+    image: hivelab
+    hostname: server
+    cap_add: [NET_ADMIN, SYS_ADMIN]
+    volumes:
+      - ./daily:/opt/lab/daily:ro

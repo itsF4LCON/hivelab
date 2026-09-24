@@ -1,0 +1,11 @@
+#!/bin/sh
+# Start the box if needed and open a shell in it as the learner. Run ./lab reset to start from a clean box.
+set -e
+cd "$(dirname "$0")"
+command -v docker >/dev/null || { echo "hivelab needs Docker: https://docs.docker.com/get-docker/" >&2; exit 1; }
+if [ "${1:-}" = reset ]; then
+	docker compose down -t 0
+	shift
+fi
+docker compose up -d --build --quiet-pull >/dev/null
+exec docker compose exec -u learner -w /home/learner box sh -lc 'cat /etc/motd; exec sh -l'

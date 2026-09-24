@@ -1,0 +1,5 @@
+192.0.2.125 - - [24/Sep/2026:11:54:50 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://reverse-proxies-measurements.softsec.ruhr-uni-bochum.de)"
+192.0.2.125 - - [24/Sep/2026:12:06:05 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://reverse-proxies-measurements.softsec.ruhr-uni-bochum.de)"
+192.0.2.139 - - [24/Sep/2026:12:08:29 +0000] "POST / HTTP/1.1" 200 153 "-" "Mozilla/5.0"
+198.51.100.141 - - [24/Sep/2026:12:13:46 +0000] "GET /.env HTTP/1.1" 404 153 "-" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_5_8; en-US) AppleWebKit/532.8 (KHTML, like Gecko) Chrome/4.0.302.2 Safari/532.8"
+192.0.2.125 - - [24/Sep/2026:12:13:55 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://reverse-proxies-measurements.softsec.ruhr-uni-bochum.de)"
