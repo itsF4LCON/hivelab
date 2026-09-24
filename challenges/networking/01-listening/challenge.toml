@@ -1,0 +1,17 @@
+title = "Who's listening?"
+difficulty = 1
+story = """
+A program on this machine is listening on a TCP port somewhere between 40000 and 40100. Connect to it and it
+will give you the flag.
+
+Servers wait for connections on ports: SSH on 22, websites on 80 and 443. Find the port this one uses.
+"""
+hints = [
+  "`ss` shows network connections. `ss --help` lists options for listening (-l), TCP (-t) and numeric ports (-n).",
+  "`ss -tln` lists every TCP port something is listening on.",
+  "Once you know the port, connect with `nc 127.0.0.1 <port>`.",
+]
+learned = """
+`ss -tln` shows every listening TCP port, and `nc` can talk to any of them. This is the first thing you do on a
+server you're securing, and the first thing an attacker does after breaking in: see what's running.
+"""

@@ -1,0 +1,24 @@
+title = "Lock the front door"
+difficulty = 2
+root = true
+type = "check"
+story = """
+hive, a honeypot on the real internet, sees thousands of SSH login attempts a day, and the most tried
+username is `root`. This server's SSH config lets root log in with just a password.
+
+Edit `/etc/ssh/sshd_config` so that:
+- root can't log in over SSH, and
+- nobody can log in with a password (keys only).
+
+The config must still be valid, or sshd won't start and you lock yourself out.
+"""
+hints = [
+  "Open the file with `doas nano /etc/ssh/sshd_config` and look for lines starting with `PermitRootLogin` and `PasswordAuthentication`.",
+  "Set `PermitRootLogin no` and `PasswordAuthentication no`. Make sure the lines don't start with `#`, which turns them into comments.",
+  "`doas sshd -t` tests the config and prints nothing if it's valid. `doas sshd -T | grep -i -e permitroot -e passwordauth` shows the values sshd will really use.",
+]
+learned = """
+Turning off root login and password logins stops almost every bot on the internet: they guess passwords for
+`root`, `admin` and `ubuntu` all day and never get a key. `sshd -t` checks a config before you restart, so you
+don't lock yourself out.
+"""
