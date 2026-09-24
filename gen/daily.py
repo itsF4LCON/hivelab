@@ -157,10 +157,12 @@ def main():
     events = fetch("/recent?limit=100")
     stats = fetch("/stats")
     if len([e for e in events if e["service"] == "ssh"]) < MIN_EVENTS:
-        sys.exit(f"only {len(events)} events, skipping today")
+        print(f"only {len(events)} events, skipping today")
+        return
     meta = build(date, events, stats, root / date)
     if not meta:
-        sys.exit("not enough unambiguous questions today, skipping")
+        print("not enough unambiguous questions today, skipping")
+        return
     index = root / "index.json"
     days = json.loads(index.read_text()) if index.exists() else []
     days = [d for d in days if d["date"] != date]
