@@ -1,0 +1,2 @@
+198.51.100.222 - - [27/Sep/2026:12:05:23 +0000] "POST / HTTP/1.1" 200 153 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36"
+198.51.100.222 - - [27/Sep/2026:12:05:23 +0000] "GET /.env HTTP/1.1" 404 153 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.5845.140 Safari/537.36"
