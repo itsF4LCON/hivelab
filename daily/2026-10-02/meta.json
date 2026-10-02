@@ -1,0 +1,49 @@
+[
+ {
+  "id": "daily-2026-10-02",
+  "track": "daily",
+  "title": "Daily: 2026-10-02",
+  "difficulty": 2,
+  "root": false,
+  "type": "questions",
+  "story": "These logs are real. They come from hive, a honeypot on the internet, between 12:00 and 12:40 UTC on 2026-10-02.\nEvery line is a bot trying to break in. (IP addresses are replaced with example addresses, but everything else is what really happened.)\n\nYour files in ~/challenge:\n- `auth.log`: SSH login attempts, exactly as a real server logs them\n- `honeypot-capture.txt`: the passwords the bots tried (only a honeypot can see these)\n- `countries.txt`: which country each IP is in\n- `access.log`: web requests, in nginx's log format",
+  "hints": [
+   "`grep`, `sort`, `uniq -c` and `sort -rn` answer most questions. Try `grep 'Failed password' ~/challenge/auth.log | head`.",
+   "Count per IP: `grep -o 'from [0-9.]*' ~/challenge/auth.log | sort | uniq -c | sort -rn`. Swap the pattern for usernames: `grep -o 'for [a-z ]*from'`.",
+   "`awk '{print $3}' ~/challenge/honeypot-capture.txt | sort | uniq -c | sort -rn` counts usernames, `$4` counts passwords. For countries, look each IP up in countries.txt with `grep`."
+  ],
+  "learned": "`203.0.113.166` alone made 78 of the 99 attempts, a typical brute-force bot working through a password list. `root` was the favorite username. Bots go for accounts that exist on almost every server.\n\nIn the last 24 hours hive caught 8,755 attempts from 160 networks.\nCome back tomorrow for new logs, or see them live at https://xivlabs.tech/#attacks.",
+  "questions": [
+   {
+    "prompt": "Which IP address had the most failed SSH logins in auth.log?",
+    "sha256": [
+     "25f6746fa9d18939837d73d27809a91bdb872d5d6b5b25d48cbebe26efa0051d"
+    ]
+   },
+   {
+    "prompt": "Which username did the bots try most often?",
+    "sha256": [
+     "4813494d137e1631bba301d5acab6e7bb7aa74ce1185d456565ef51d737677b2"
+    ]
+   },
+   {
+    "prompt": "How many different IP addresses tried to log in over SSH?",
+    "sha256": [
+     "7902699be42c8a8e46fbbb4501726517e86b22c56a189f7625a6da49081b2451"
+    ]
+   },
+   {
+    "prompt": "Use countries.txt: which country (two-letter code) sent the most SSH attempts?",
+    "sha256": [
+     "79adb2a2fce5c6ba215fe5f27f532d4e7edbac4b6a5e09e1ef3a08084a904621"
+    ]
+   }
+  ],
+  "files": [
+   "access.log",
+   "auth.log",
+   "countries.txt",
+   "honeypot-capture.txt"
+  ]
+ }
+]
