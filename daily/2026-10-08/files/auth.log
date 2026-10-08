@@ -1,0 +1,78 @@
+Oct 08 12:54:15 server sshd[29168]: Failed password for root from 203.0.113.189 port 43264 ssh2
+Oct 08 12:54:21 server sshd[25813]: Failed password for root from 203.0.113.136 port 43434 ssh2
+Oct 08 12:54:33 server sshd[24860]: Failed password for root from 203.0.113.189 port 54045 ssh2
+Oct 08 12:56:57 server sshd[23804]: Failed password for root from 203.0.113.136 port 48883 ssh2
+Oct 08 12:57:37 server sshd[28071]: Failed password for root from 203.0.113.189 port 56168 ssh2
+Oct 08 13:00:09 server sshd[28906]: Failed password for root from 203.0.113.189 port 33744 ssh2
+Oct 08 13:01:03 server sshd[29075]: Failed password for root from 203.0.113.136 port 57266 ssh2
+Oct 08 13:03:54 server sshd[25891]: Failed password for root from 203.0.113.189 port 47283 ssh2
+Oct 08 13:05:17 server sshd[20461]: Failed password for root from 203.0.113.136 port 57522 ssh2
+Oct 08 13:05:40 server sshd[26200]: Failed password for root from 192.0.2.57 port 37893 ssh2
+Oct 08 13:05:41 server sshd[23171]: Failed password for root from 192.0.2.57 port 34987 ssh2
+Oct 08 13:05:42 server sshd[27161]: Failed password for root from 192.0.2.57 port 45500 ssh2
+Oct 08 13:05:43 server sshd[23897]: Failed password for root from 192.0.2.57 port 37556 ssh2
+Oct 08 13:05:44 server sshd[24094]: Failed password for root from 192.0.2.57 port 37689 ssh2
+Oct 08 13:05:52 server sshd[22404]: Failed password for root from 203.0.113.189 port 48602 ssh2
+Oct 08 13:09:14 server sshd[29339]: Failed password for root from 203.0.113.136 port 56997 ssh2
+Oct 08 13:09:32 server sshd[20220]: Failed password for root from 192.0.2.136 port 50904 ssh2
+Oct 08 13:09:33 server sshd[27558]: Failed password for root from 192.0.2.136 port 48603 ssh2
+Oct 08 13:09:34 server sshd[20776]: Failed password for root from 192.0.2.136 port 39989 ssh2
+Oct 08 13:09:50 server sshd[27013]: Failed password for invalid user aubrianna from 198.51.100.67 port 33763 ssh2
+Oct 08 13:09:51 server sshd[24354]: Failed password for invalid user aubrianna from 198.51.100.67 port 51149 ssh2
+Oct 08 13:09:52 server sshd[20543]: Failed password for invalid user aubrianna from 198.51.100.67 port 39130 ssh2
+Oct 08 13:09:53 server sshd[25931]: Failed password for invalid user aubrianna from 198.51.100.67 port 33323 ssh2
+Oct 08 13:09:54 server sshd[20532]: Failed password for invalid user aubrianna from 198.51.100.67 port 47892 ssh2
+Oct 08 13:11:11 server sshd[26694]: Failed password for root from 192.0.2.57 port 37171 ssh2
+Oct 08 13:11:12 server sshd[21780]: Failed password for root from 192.0.2.57 port 51646 ssh2
+Oct 08 13:11:13 server sshd[23448]: Failed password for root from 192.0.2.57 port 35643 ssh2
+Oct 08 13:11:14 server sshd[23247]: Failed password for root from 192.0.2.57 port 55885 ssh2
+Oct 08 13:11:15 server sshd[28955]: Failed password for root from 192.0.2.57 port 59073 ssh2
+Oct 08 13:11:34 server sshd[25085]: Failed password for root from 203.0.113.189 port 49395 ssh2
+Oct 08 13:13:02 server sshd[20641]: Failed password for root from 203.0.113.189 port 43005 ssh2
+Oct 08 13:13:36 server sshd[26432]: Failed password for root from 203.0.113.136 port 37579 ssh2
+Oct 08 13:14:03 server sshd[22653]: Failed password for root from 203.0.113.189 port 46270 ssh2
+Oct 08 13:16:08 server sshd[28821]: Failed password for root from 192.0.2.57 port 59081 ssh2
+Oct 08 13:16:09 server sshd[21414]: Failed password for root from 192.0.2.57 port 34164 ssh2
+Oct 08 13:16:10 server sshd[29928]: Failed password for root from 192.0.2.57 port 41537 ssh2
+Oct 08 13:16:11 server sshd[28465]: Failed password for root from 192.0.2.57 port 58476 ssh2
+Oct 08 13:16:12 server sshd[29001]: Failed password for root from 192.0.2.57 port 37917 ssh2
+Oct 08 13:17:48 server sshd[24809]: Failed password for root from 203.0.113.136 port 59685 ssh2
+Oct 08 13:19:33 server sshd[22708]: Failed password for root from 203.0.113.189 port 38980 ssh2
+Oct 08 13:19:58 server sshd[27050]: Failed password for root from 203.0.113.189 port 36426 ssh2
+Oct 08 13:20:22 server sshd[28286]: Failed password for invalid user admin from 198.51.100.67 port 41961 ssh2
+Oct 08 13:20:23 server sshd[22349]: Failed password for invalid user admin from 198.51.100.67 port 48651 ssh2
+Oct 08 13:20:24 server sshd[20560]: Failed password for invalid user admin from 198.51.100.67 port 41667 ssh2
+Oct 08 13:20:37 server sshd[24404]: Failed password for root from 203.0.113.189 port 54431 ssh2
+Oct 08 13:21:05 server sshd[26731]: Failed password for root from 192.0.2.49 port 46032 ssh2
+Oct 08 13:21:06 server sshd[26102]: Failed password for root from 192.0.2.49 port 50645 ssh2
+Oct 08 13:21:07 server sshd[29919]: Failed password for root from 192.0.2.49 port 36736 ssh2
+Oct 08 13:21:08 server sshd[23790]: Failed password for root from 192.0.2.49 port 58429 ssh2
+Oct 08 13:21:09 server sshd[27337]: Failed password for root from 192.0.2.49 port 44480 ssh2
+Oct 08 13:21:51 server sshd[23202]: Failed password for root from 203.0.113.136 port 50520 ssh2
+Oct 08 13:23:11 server sshd[22772]: Failed password for invalid user ubuntu from 203.0.113.189 port 37526 ssh2
+Oct 08 13:25:23 server sshd[23841]: Failed password for invalid user ubuntu from 203.0.113.189 port 46816 ssh2
+Oct 08 13:25:44 server sshd[29536]: Failed password for root from 203.0.113.136 port 56593 ssh2
+Oct 08 13:25:59 server sshd[22825]: Failed password for root from 192.0.2.57 port 36582 ssh2
+Oct 08 13:26:00 server sshd[27308]: Failed password for root from 192.0.2.57 port 36068 ssh2
+Oct 08 13:26:01 server sshd[29394]: Failed password for root from 192.0.2.57 port 51857 ssh2
+Oct 08 13:26:02 server sshd[22784]: Failed password for root from 192.0.2.57 port 60485 ssh2
+Oct 08 13:26:03 server sshd[20976]: Failed password for root from 192.0.2.57 port 43049 ssh2
+Oct 08 13:26:54 server sshd[24219]: Failed password for invalid user ubuntu from 203.0.113.189 port 44428 ssh2
+Oct 08 13:27:28 server sshd[29779]: Failed password for invalid user ubuntu from 203.0.113.189 port 45542 ssh2
+Oct 08 13:28:14 server sshd[21691]: Failed password for root from 203.0.113.136 port 46663 ssh2
+Oct 08 13:30:03 server sshd[23352]: Failed password for root from 203.0.113.136 port 51379 ssh2
+Oct 08 13:30:50 server sshd[21691]: Failed password for root from 192.0.2.49 port 35454 ssh2
+Oct 08 13:30:51 server sshd[22796]: Failed password for root from 192.0.2.49 port 47049 ssh2
+Oct 08 13:30:52 server sshd[26550]: Failed password for root from 192.0.2.49 port 38223 ssh2
+Oct 08 13:30:53 server sshd[21452]: Failed password for root from 192.0.2.49 port 60220 ssh2
+Oct 08 13:30:55 server sshd[28976]: Failed password for root from 192.0.2.49 port 51323 ssh2
+Oct 08 13:31:24 server sshd[20007]: Failed password for invalid user ubuntu from 203.0.113.189 port 52602 ssh2
+Oct 08 13:32:01 server sshd[28388]: Failed password for root from 203.0.113.136 port 54571 ssh2
+Oct 08 13:33:58 server sshd[26585]: Failed password for root from 203.0.113.136 port 57078 ssh2
+Oct 08 13:34:49 server sshd[24287]: Failed password for invalid user ubuntu from 203.0.113.189 port 45043 ssh2
+Oct 08 13:35:42 server sshd[22483]: Failed password for root from 192.0.2.49 port 39695 ssh2
+Oct 08 13:35:43 server sshd[28602]: Failed password for root from 192.0.2.49 port 44664 ssh2
+Oct 08 13:35:44 server sshd[20067]: Failed password for root from 192.0.2.49 port 52619 ssh2
+Oct 08 13:35:45 server sshd[21181]: Failed password for root from 192.0.2.49 port 50884 ssh2
+Oct 08 13:35:46 server sshd[26756]: Failed password for root from 192.0.2.49 port 60745 ssh2
+Oct 08 13:35:46 server sshd[29320]: Failed password for root from 203.0.113.136 port 46293 ssh2
