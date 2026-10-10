@@ -1,0 +1,99 @@
+Oct 10 12:26:44 server sshd[26497]: Failed password for invalid user admin from 192.0.2.227 port 43870 ssh2
+Oct 10 12:27:08 server sshd[21088]: Failed password for invalid user iksulata from 192.0.2.227 port 48002 ssh2
+Oct 10 12:27:13 server sshd[27614]: Failed password for root from 192.0.2.227 port 49030 ssh2
+Oct 10 12:27:19 server sshd[23349]: Failed password for root from 192.0.2.227 port 33920 ssh2
+Oct 10 12:27:25 server sshd[23251]: Failed password for invalid user amir from 192.0.2.227 port 57818 ssh2
+Oct 10 12:27:31 server sshd[24562]: Failed password for invalid user nvidia from 192.0.2.227 port 48150 ssh2
+Oct 10 12:27:33 server sshd[25923]: Failed password for invalid user www from 192.0.2.60 port 49414 ssh2
+Oct 10 12:27:38 server sshd[21689]: Failed password for invalid user chris from 192.0.2.227 port 39605 ssh2
+Oct 10 12:27:38 server sshd[24276]: Failed password for root from 203.0.113.111 port 35565 ssh2
+Oct 10 12:27:43 server sshd[27466]: Failed password for invalid user kali from 192.0.2.227 port 39359 ssh2
+Oct 10 12:27:49 server sshd[28349]: Failed password for invalid user prueba from 192.0.2.227 port 56862 ssh2
+Oct 10 12:28:17 server sshd[26270]: Failed password for root from 203.0.113.99 port 50011 ssh2
+Oct 10 12:28:18 server sshd[22913]: Failed password for root from 203.0.113.99 port 60998 ssh2
+Oct 10 12:28:19 server sshd[21050]: Failed password for root from 203.0.113.99 port 56082 ssh2
+Oct 10 12:28:19 server sshd[20318]: Failed password for root from 192.0.2.227 port 36008 ssh2
+Oct 10 12:28:20 server sshd[22396]: Failed password for root from 203.0.113.99 port 55563 ssh2
+Oct 10 12:28:25 server sshd[25381]: Failed password for root from 192.0.2.227 port 48051 ssh2
+Oct 10 12:28:31 server sshd[26830]: Failed password for root from 192.0.2.227 port 34783 ssh2
+Oct 10 12:28:37 server sshd[24353]: Failed password for invalid user crafty from 192.0.2.227 port 50740 ssh2
+Oct 10 12:28:43 server sshd[22448]: Failed password for invalid user username from 192.0.2.227 port 57172 ssh2
+Oct 10 12:28:48 server sshd[26320]: Failed password for root from 192.0.2.227 port 37149 ssh2
+Oct 10 12:29:01 server sshd[29287]: Failed password for invalid user admin from 192.0.2.227 port 40958 ssh2
+Oct 10 12:29:06 server sshd[20768]: Failed password for root from 203.0.113.111 port 60548 ssh2
+Oct 10 12:29:08 server sshd[22121]: Failed password for invalid user deploy from 192.0.2.227 port 34973 ssh2
+Oct 10 12:29:08 server sshd[21217]: Failed password for invalid user admin from 192.0.2.60 port 44235 ssh2
+Oct 10 12:29:13 server sshd[27063]: Failed password for root from 192.0.2.227 port 54617 ssh2
+Oct 10 12:29:19 server sshd[25823]: Failed password for invalid user clawdbot from 192.0.2.227 port 52582 ssh2
+Oct 10 12:29:26 server sshd[21548]: Failed password for invalid user djangouser from 192.0.2.227 port 60310 ssh2
+Oct 10 12:29:32 server sshd[20033]: Failed password for invalid user adminuser from 192.0.2.227 port 48100 ssh2
+Oct 10 12:29:39 server sshd[21495]: Failed password for invalid user kafka from 192.0.2.227 port 45381 ssh2
+Oct 10 12:29:44 server sshd[22168]: Failed password for invalid user ubuntu from 192.0.2.227 port 55108 ssh2
+Oct 10 12:30:06 server sshd[24813]: Failed password for root from 198.51.100.38 port 58013 ssh2
+Oct 10 12:30:07 server sshd[20957]: Failed password for invalid user lighthouse from 192.0.2.227 port 46919 ssh2
+Oct 10 12:30:13 server sshd[28355]: Failed password for root from 192.0.2.227 port 50377 ssh2
+Oct 10 12:30:21 server sshd[22251]: Failed password for invalid user lucas from 192.0.2.227 port 57023 ssh2
+Oct 10 12:30:27 server sshd[26123]: Failed password for invalid user user18 from 192.0.2.227 port 60521 ssh2
+Oct 10 12:30:33 server sshd[23383]: Failed password for root from 192.0.2.227 port 57857 ssh2
+Oct 10 12:30:36 server sshd[20396]: Failed password for root from 203.0.113.111 port 52875 ssh2
+Oct 10 12:30:39 server sshd[21199]: Failed password for root from 192.0.2.227 port 37230 ssh2
+Oct 10 12:30:40 server sshd[29773]: Failed password for invalid user bitrix from 192.0.2.60 port 55764 ssh2
+Oct 10 12:30:44 server sshd[21797]: Failed password for invalid user oscar from 192.0.2.227 port 51668 ssh2
+Oct 10 12:31:05 server sshd[25024]: Failed password for invalid user test from 192.0.2.227 port 57862 ssh2
+Oct 10 12:31:10 server sshd[23637]: Failed password for invalid user fastuser from 192.0.2.227 port 43617 ssh2
+Oct 10 12:31:16 server sshd[25218]: Failed password for root from 192.0.2.227 port 49506 ssh2
+Oct 10 12:31:23 server sshd[22633]: Failed password for root from 192.0.2.227 port 55799 ssh2
+Oct 10 12:31:29 server sshd[21364]: Failed password for invalid user mcserver from 192.0.2.227 port 55198 ssh2
+Oct 10 12:31:36 server sshd[25471]: Failed password for invalid user student from 192.0.2.227 port 58126 ssh2
+Oct 10 12:31:42 server sshd[25628]: Failed password for invalid user deploy from 192.0.2.227 port 49362 ssh2
+Oct 10 12:31:43 server sshd[21448]: Failed password for root from 203.0.113.118 port 44659 ssh2
+Oct 10 12:31:49 server sshd[26670]: Failed password for invalid user ec2-user from 192.0.2.227 port 57985 ssh2
+Oct 10 12:32:01 server sshd[28159]: Failed password for root from 192.0.2.227 port 58195 ssh2
+Oct 10 12:32:05 server sshd[25578]: Failed password for root from 203.0.113.111 port 46020 ssh2
+Oct 10 12:32:07 server sshd[20958]: Failed password for invalid user user from 192.0.2.227 port 37351 ssh2
+Oct 10 12:32:12 server sshd[23136]: Failed password for root from 192.0.2.227 port 55450 ssh2
+Oct 10 12:32:17 server sshd[21454]: Failed password for invalid user cloud from 192.0.2.60 port 33360 ssh2
+Oct 10 12:32:19 server sshd[24943]: Failed password for root from 192.0.2.227 port 55823 ssh2
+Oct 10 12:32:26 server sshd[24037]: Failed password for invalid user recorder from 192.0.2.227 port 49305 ssh2
+Oct 10 12:32:33 server sshd[21423]: Failed password for root from 192.0.2.227 port 38746 ssh2
+Oct 10 12:32:39 server sshd[28672]: Failed password for root from 192.0.2.227 port 59955 ssh2
+Oct 10 12:32:45 server sshd[24951]: Failed password for invalid user gns3 from 192.0.2.227 port 52195 ssh2
+Oct 10 12:33:16 server sshd[25532]: Failed password for root from 192.0.2.46 port 56736 ssh2
+Oct 10 12:33:21 server sshd[29151]: Failed password for invalid user node from 203.0.113.118 port 44593 ssh2
+Oct 10 12:33:23 server sshd[25521]: Failed password for invalid user nexus from 198.51.100.38 port 47151 ssh2
+Oct 10 12:33:23 server sshd[23253]: Failed password for root from 192.0.2.227 port 45553 ssh2
+Oct 10 12:33:28 server sshd[23635]: Failed password for invalid user deploy from 192.0.2.227 port 45067 ssh2
+Oct 10 12:33:34 server sshd[26138]: Failed password for root from 203.0.113.111 port 56685 ssh2
+Oct 10 12:33:34 server sshd[22221]: Failed password for invalid user user1 from 192.0.2.227 port 47951 ssh2
+Oct 10 12:33:41 server sshd[24734]: Failed password for root from 192.0.2.227 port 46563 ssh2
+Oct 10 12:33:47 server sshd[26468]: Failed password for root from 192.0.2.60 port 40728 ssh2
+Oct 10 12:33:48 server sshd[27453]: Failed password for root from 192.0.2.227 port 59198 ssh2
+Oct 10 12:33:54 server sshd[20376]: Failed password for invalid user appuser from 192.0.2.227 port 54395 ssh2
+Oct 10 12:34:00 server sshd[22892]: Failed password for root from 192.0.2.227 port 49019 ssh2
+Oct 10 12:34:05 server sshd[21246]: Failed password for invalid user elastic from 192.0.2.227 port 49030 ssh2
+Oct 10 12:34:11 server sshd[26583]: Failed password for invalid user ubuntu from 192.0.2.227 port 46259 ssh2
+Oct 10 12:34:18 server sshd[21476]: Failed password for invalid user cheryl from 192.0.2.227 port 34567 ssh2
+Oct 10 12:34:24 server sshd[27087]: Failed password for invalid user reza from 192.0.2.227 port 43231 ssh2
+Oct 10 12:34:31 server sshd[24371]: Failed password for invalid user postgres from 192.0.2.227 port 52442 ssh2
+Oct 10 12:34:37 server sshd[20175]: Failed password for invalid user deploy from 192.0.2.227 port 37445 ssh2
+Oct 10 12:34:42 server sshd[23943]: Failed password for invalid user ub from 192.0.2.227 port 36403 ssh2
+Oct 10 12:35:02 server sshd[24071]: Failed password for invalid user node from 203.0.113.118 port 42927 ssh2
+Oct 10 12:35:03 server sshd[29795]: Failed password for root from 203.0.113.111 port 35252 ssh2
+Oct 10 12:35:07 server sshd[29410]: Failed password for invalid user trader from 192.0.2.227 port 53180 ssh2
+Oct 10 12:35:14 server sshd[28139]: Failed password for invalid user hamed from 192.0.2.227 port 49242 ssh2
+Oct 10 12:35:16 server sshd[22518]: Failed password for root from 192.0.2.60 port 45095 ssh2
+Oct 10 12:35:21 server sshd[24372]: Failed password for invalid user wildfly from 192.0.2.227 port 59571 ssh2
+Oct 10 12:35:26 server sshd[26142]: Failed password for invalid user deploy from 192.0.2.227 port 54780 ssh2
+Oct 10 12:35:32 server sshd[21591]: Failed password for invalid user mysql from 192.0.2.227 port 39719 ssh2
+Oct 10 12:35:38 server sshd[25240]: Failed password for invalid user username from 192.0.2.227 port 40761 ssh2
+Oct 10 12:35:45 server sshd[21527]: Failed password for root from 192.0.2.227 port 53843 ssh2
+Oct 10 12:36:07 server sshd[24927]: Failed password for root from 192.0.2.227 port 39925 ssh2
+Oct 10 12:36:13 server sshd[21513]: Failed password for root from 192.0.2.227 port 43637 ssh2
+Oct 10 12:36:19 server sshd[23369]: Failed password for invalid user support from 192.0.2.227 port 55786 ssh2
+Oct 10 12:36:24 server sshd[28587]: Failed password for invalid user nexus from 192.0.2.227 port 41753 ssh2
+Oct 10 12:36:30 server sshd[28760]: Failed password for root from 192.0.2.227 port 54736 ssh2
+Oct 10 12:36:36 server sshd[23205]: Failed password for root from 192.0.2.227 port 46000 ssh2
+Oct 10 12:36:37 server sshd[26875]: Failed password for root from 203.0.113.111 port 55410 ssh2
+Oct 10 12:36:43 server sshd[27852]: Failed password for invalid user yzb from 192.0.2.227 port 46662 ssh2
+Oct 10 12:36:46 server sshd[26322]: Failed password for invalid user node from 203.0.113.118 port 36913 ssh2
+Oct 10 12:36:49 server sshd[29322]: Failed password for root from 192.0.2.227 port 51623 ssh2
