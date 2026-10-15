@@ -1,0 +1,4 @@
+203.0.113.108 - - [15/Oct/2026:11:25:48 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://goose.softsec.ruhr-uni-bochum.de)"
+203.0.113.108 - - [15/Oct/2026:11:26:31 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://goose.softsec.ruhr-uni-bochum.de)"
+203.0.113.108 - - [15/Oct/2026:11:29:32 +0000] "GET / HTTP/1.1" 200 153 "-" "Software Security Research/1.0 (+https://goose.softsec.ruhr-uni-bochum.de)"
+203.0.113.113 - - [15/Oct/2026:11:33:33 +0000] "GET /phpmyadmin/scripts/setup.php HTTP/1.1" 404 153 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
