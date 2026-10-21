@@ -1,0 +1,43 @@
+[
+ {
+  "id": "daily-2026-10-21",
+  "track": "daily",
+  "title": "Daily: 2026-10-21",
+  "difficulty": 2,
+  "root": false,
+  "type": "questions",
+  "story": "These logs are real. They come from hive, a honeypot on the internet, between 10:15 and 11:54 UTC on 2026-10-21.\nEvery line is a bot trying to break in. (IP addresses are replaced with example addresses, but everything else is what really happened.)\n\nYour files in ~/challenge:\n- `auth.log`: SSH login attempts, exactly as a real server logs them\n- `honeypot-capture.txt`: the passwords the bots tried (only a honeypot can see these)\n- `countries.txt`: which country each IP is in\n- `access.log`: web requests, in nginx's log format",
+  "hints": [
+   "`grep`, `sort`, `uniq -c` and `sort -rn` answer most questions. Try `grep 'Failed password' ~/challenge/auth.log | head`.",
+   "Count per IP: `grep -o 'from [0-9.]*' ~/challenge/auth.log | sort | uniq -c | sort -rn`. Swap the pattern for usernames: `grep -o 'for [a-z ]*from'`.",
+   "`awk '{print $3}' ~/challenge/honeypot-capture.txt | sort | uniq -c | sort -rn` counts usernames, `$4` counts passwords. For countries, look each IP up in countries.txt with `grep`."
+  ],
+  "learned": "The most tried password was `123456`. If it's on a bot's list, it's not a password. `/SDK/webLanguage`: the scanner was looking for Hikvision cameras vulnerable to CVE-2021-36260 (remote command execution). `/.env`: the scanner was looking for an `.env` file, where apps keep database passwords and API keys.\n\nIn the last 24 hours hive caught 4,902 attempts from 189 networks.\nCome back tomorrow for new logs, or see them live at https://xivlabs.tech/#attacks.",
+  "questions": [
+   {
+    "prompt": "How many different IP addresses tried to log in over SSH?",
+    "sha256": [
+     "6f4b6612125fb3a0daecd2799dfd6c9c299424fd920f9b308110a2c1fbd8f443"
+    ]
+   },
+   {
+    "prompt": "Use countries.txt: which country (two-letter code) sent the most SSH attempts?",
+    "sha256": [
+     "0b407281768f0e833afef47ed464b6571d01ca4d53c12ce5c51d1462f4ad6677"
+    ]
+   },
+   {
+    "prompt": "Use honeypot-capture.txt: which password was tried most?",
+    "sha256": [
+     "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92"
+    ]
+   }
+  ],
+  "files": [
+   "access.log",
+   "auth.log",
+   "countries.txt",
+   "honeypot-capture.txt"
+  ]
+ }
+]
