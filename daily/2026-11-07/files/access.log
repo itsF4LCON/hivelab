@@ -1,0 +1,6 @@
+198.51.100.90 - - [07/Nov/2026:12:51:46 +0000] "GET / HTTP/1.1" 200 153 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36"
+192.0.2.21 - - [07/Nov/2026:13:07:24 +0000] "GET /.codex HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+192.0.2.21 - - [07/Nov/2026:13:07:24 +0000] "GET /.zed HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+192.0.2.21 - - [07/Nov/2026:13:07:25 +0000] "GET /.nx9e49626825e9 HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+192.0.2.21 - - [07/Nov/2026:13:07:25 +0000] "GET /.junie HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
+192.0.2.21 - - [07/Nov/2026:13:07:25 +0000] "GET /.augment HTTP/1.1" 404 153 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"
