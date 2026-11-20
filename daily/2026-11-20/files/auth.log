@@ -1,0 +1,99 @@
+Nov 20 15:19:45 server sshd[20975]: Failed password for invalid user user6 from 203.0.113.243 port 40635 ssh2
+Nov 20 15:20:12 server sshd[25571]: Failed password for invalid user myuser from 203.0.113.243 port 51964 ssh2
+Nov 20 15:20:19 server sshd[22418]: Failed password for invalid user deployer from 203.0.113.243 port 56790 ssh2
+Nov 20 15:20:34 server sshd[23162]: Failed password for root from 203.0.113.243 port 39895 ssh2
+Nov 20 15:20:41 server sshd[20197]: Failed password for invalid user config from 203.0.113.243 port 34103 ssh2
+Nov 20 15:20:45 server sshd[22567]: Failed password for invalid user admin from 203.0.113.183 port 56161 ssh2
+Nov 20 15:20:46 server sshd[29520]: Failed password for invalid user admin from 203.0.113.183 port 42301 ssh2
+Nov 20 15:20:47 server sshd[27693]: Failed password for invalid user admin from 203.0.113.183 port 37332 ssh2
+Nov 20 15:20:48 server sshd[25903]: Failed password for invalid user eka from 203.0.113.243 port 44220 ssh2
+Nov 20 15:20:48 server sshd[28666]: Failed password for invalid user cloudera from 203.0.113.243 port 59936 ssh2
+Nov 20 15:20:56 server sshd[21599]: Failed password for root from 203.0.113.243 port 58366 ssh2
+Nov 20 15:21:15 server sshd[25740]: Failed password for root from 203.0.113.243 port 55273 ssh2
+Nov 20 15:21:17 server sshd[27480]: Failed password for invalid user User3 from 192.0.2.162 port 40915 ssh2
+Nov 20 15:21:18 server sshd[23804]: Failed password for root from 203.0.113.243 port 60160 ssh2
+Nov 20 15:21:21 server sshd[24881]: Failed password for invalid user jeremy from 203.0.113.243 port 55409 ssh2
+Nov 20 15:21:27 server sshd[27035]: Failed password for invalid user deploy from 203.0.113.243 port 46484 ssh2
+Nov 20 15:21:35 server sshd[24405]: Failed password for root from 203.0.113.243 port 60334 ssh2
+Nov 20 15:21:39 server sshd[28609]: Failed password for invalid user oracle from 203.0.113.243 port 60400 ssh2
+Nov 20 15:21:41 server sshd[29867]: Failed password for invalid user openclaw from 203.0.113.243 port 39424 ssh2
+Nov 20 15:21:47 server sshd[27373]: Failed password for invalid user anna from 203.0.113.243 port 42258 ssh2
+Nov 20 15:21:53 server sshd[21324]: Failed password for invalid user azureuser from 203.0.113.243 port 38498 ssh2
+Nov 20 15:21:58 server sshd[27732]: Failed password for invalid user eva from 203.0.113.243 port 43281 ssh2
+Nov 20 15:22:06 server sshd[23255]: Failed password for invalid user try from 203.0.113.243 port 48793 ssh2
+Nov 20 15:22:12 server sshd[28274]: Failed password for root from 203.0.113.243 port 47645 ssh2
+Nov 20 15:22:18 server sshd[23868]: Failed password for invalid user rock from 203.0.113.243 port 37743 ssh2
+Nov 20 15:22:24 server sshd[21010]: Failed password for invalid user wuyiwen from 203.0.113.243 port 52225 ssh2
+Nov 20 15:22:30 server sshd[27786]: Failed password for root from 203.0.113.243 port 38345 ssh2
+Nov 20 15:22:37 server sshd[22772]: Failed password for invalid user deploy from 192.0.2.85 port 36195 ssh2
+Nov 20 15:22:37 server sshd[20133]: Failed password for invalid user ftpuser from 203.0.113.243 port 46835 ssh2
+Nov 20 15:22:44 server sshd[24610]: Failed password for invalid user kafka from 203.0.113.243 port 60114 ssh2
+Nov 20 15:22:52 server sshd[26786]: Failed password for root from 203.0.113.243 port 49687 ssh2
+Nov 20 15:22:58 server sshd[23082]: Failed password for invalid user cloud from 203.0.113.243 port 57569 ssh2
+Nov 20 15:23:06 server sshd[29052]: Failed password for invalid user admin from 203.0.113.243 port 35111 ssh2
+Nov 20 15:23:12 server sshd[23854]: Failed password for root from 203.0.113.243 port 60116 ssh2
+Nov 20 15:23:22 server sshd[20311]: Failed password for invalid user greg from 203.0.113.243 port 44262 ssh2
+Nov 20 15:23:28 server sshd[21996]: Failed password for root from 203.0.113.243 port 41864 ssh2
+Nov 20 15:23:33 server sshd[29561]: Failed password for invalid user allofoodlab from 192.0.2.162 port 53202 ssh2
+Nov 20 15:23:43 server sshd[24408]: Failed password for invalid user deploy from 203.0.113.243 port 49745 ssh2
+Nov 20 15:23:44 server sshd[29991]: Failed password for invalid user howard from 203.0.113.243 port 59756 ssh2
+Nov 20 15:23:50 server sshd[22686]: Failed password for root from 203.0.113.243 port 54769 ssh2
+Nov 20 15:23:57 server sshd[26978]: Failed password for invalid user user8 from 203.0.113.243 port 49785 ssh2
+Nov 20 15:24:05 server sshd[23958]: Failed password for root from 203.0.113.243 port 34605 ssh2
+Nov 20 15:24:12 server sshd[23239]: Failed password for invalid user git from 203.0.113.243 port 47299 ssh2
+Nov 20 15:24:20 server sshd[22846]: Failed password for root from 203.0.113.243 port 33621 ssh2
+Nov 20 15:24:30 server sshd[27394]: Failed password for root from 203.0.113.243 port 54693 ssh2
+Nov 20 15:24:35 server sshd[22832]: Failed password for invalid user admin from 203.0.113.243 port 53253 ssh2
+Nov 20 15:24:42 server sshd[21507]: Failed password for invalid user newuser from 203.0.113.243 port 52619 ssh2
+Nov 20 15:25:01 server sshd[23698]: Failed password for invalid user dev from 192.0.2.102 port 38598 ssh2
+Nov 20 15:25:05 server sshd[24102]: Failed password for root from 203.0.113.243 port 52186 ssh2
+Nov 20 15:25:11 server sshd[28796]: Failed password for root from 203.0.113.243 port 47192 ssh2
+Nov 20 15:25:19 server sshd[22388]: Failed password for invalid user deploy from 203.0.113.243 port 52545 ssh2
+Nov 20 15:25:26 server sshd[25698]: Failed password for root from 203.0.113.243 port 52399 ssh2
+Nov 20 15:25:34 server sshd[21510]: Failed password for root from 203.0.113.243 port 41379 ssh2
+Nov 20 15:25:42 server sshd[23513]: Failed password for invalid user wangxl from 192.0.2.162 port 39264 ssh2
+Nov 20 15:25:43 server sshd[21698]: Failed password for root from 203.0.113.243 port 58087 ssh2
+Nov 20 15:25:47 server sshd[20247]: Failed password for invalid user sophosav from 192.0.2.85 port 48606 ssh2
+Nov 20 15:25:48 server sshd[28034]: Failed password for root from 203.0.113.243 port 39381 ssh2
+Nov 20 15:25:56 server sshd[25362]: Failed password for root from 203.0.113.243 port 50603 ssh2
+Nov 20 15:26:03 server sshd[26446]: Failed password for invalid user debian from 203.0.113.243 port 40000 ssh2
+Nov 20 15:26:12 server sshd[21437]: Failed password for root from 203.0.113.243 port 46807 ssh2
+Nov 20 15:26:20 server sshd[23787]: Failed password for invalid user chris from 203.0.113.243 port 44654 ssh2
+Nov 20 15:26:28 server sshd[28806]: Failed password for invalid user admin1 from 203.0.113.243 port 54276 ssh2
+Nov 20 15:26:35 server sshd[26703]: Failed password for invalid user devops from 203.0.113.243 port 59375 ssh2
+Nov 20 15:26:43 server sshd[24212]: Failed password for invalid user kafka from 203.0.113.243 port 50930 ssh2
+Nov 20 15:26:51 server sshd[21192]: Failed password for invalid user uu from 203.0.113.243 port 60772 ssh2
+Nov 20 15:26:57 server sshd[28371]: Failed password for invalid user aiuser from 203.0.113.243 port 59892 ssh2
+Nov 20 15:27:03 server sshd[28547]: Failed password for root from 203.0.113.243 port 39543 ssh2
+Nov 20 15:27:12 server sshd[28881]: Failed password for invalid user no-reply from 203.0.113.243 port 57197 ssh2
+Nov 20 15:27:19 server sshd[26828]: Failed password for invalid user aida from 203.0.113.243 port 36949 ssh2
+Nov 20 15:27:27 server sshd[22975]: Failed password for invalid user guest from 203.0.113.243 port 38096 ssh2
+Nov 20 15:27:35 server sshd[23150]: Failed password for invalid user frank from 203.0.113.243 port 39273 ssh2
+Nov 20 15:27:41 server sshd[27823]: Failed password for invalid user wowzonem from 192.0.2.162 port 52417 ssh2
+Nov 20 15:27:42 server sshd[22936]: Failed password for invalid user Tronlong from 203.0.113.243 port 51369 ssh2
+Nov 20 15:27:50 server sshd[29204]: Failed password for invalid user user from 203.0.113.243 port 45674 ssh2
+Nov 20 15:27:59 server sshd[28725]: Failed password for root from 203.0.113.243 port 53529 ssh2
+Nov 20 15:28:11 server sshd[20424]: Failed password for invalid user apm from 203.0.113.243 port 43940 ssh2
+Nov 20 15:28:14 server sshd[25378]: Failed password for root from 203.0.113.243 port 57887 ssh2
+Nov 20 15:28:24 server sshd[20048]: Failed password for invalid user user from 203.0.113.243 port 54074 ssh2
+Nov 20 15:28:31 server sshd[27685]: Failed password for root from 203.0.113.243 port 42573 ssh2
+Nov 20 15:28:38 server sshd[28794]: Failed password for root from 203.0.113.243 port 60757 ssh2
+Nov 20 15:28:44 server sshd[22135]: Failed password for root from 203.0.113.243 port 52024 ssh2
+Nov 20 15:28:46 server sshd[29243]: Failed password for invalid user sunqar from 192.0.2.85 port 58350 ssh2
+Nov 20 15:28:51 server sshd[27792]: Failed password for root from 203.0.113.243 port 53481 ssh2
+Nov 20 15:28:59 server sshd[23789]: Failed password for invalid user pi from 203.0.113.243 port 34651 ssh2
+Nov 20 15:29:06 server sshd[26060]: Failed password for invalid user ubuntu from 203.0.113.243 port 36603 ssh2
+Nov 20 15:29:14 server sshd[28222]: Failed password for invalid user pi from 203.0.113.243 port 39779 ssh2
+Nov 20 15:29:22 server sshd[25279]: Failed password for invalid user marina from 203.0.113.243 port 54004 ssh2
+Nov 20 15:29:29 server sshd[22999]: Failed password for root from 203.0.113.243 port 48965 ssh2
+Nov 20 15:29:37 server sshd[27598]: Failed password for invalid user nicolas from 203.0.113.243 port 53322 ssh2
+Nov 20 15:29:44 server sshd[22735]: Failed password for invalid user ubuntu from 203.0.113.243 port 33998 ssh2
+Nov 20 15:29:46 server sshd[29833]: Failed password for invalid user admin1 from 192.0.2.162 port 34574 ssh2
+Nov 20 15:29:52 server sshd[21671]: Failed password for invalid user scanner from 203.0.113.243 port 58985 ssh2
+Nov 20 15:29:58 server sshd[23902]: Failed password for invalid user amax from 203.0.113.243 port 52199 ssh2
+Nov 20 15:30:07 server sshd[25900]: Failed password for invalid user anton from 203.0.113.243 port 60810 ssh2
+Nov 20 15:30:14 server sshd[26059]: Failed password for invalid user ubuntu from 203.0.113.243 port 35142 ssh2
+Nov 20 15:30:22 server sshd[29979]: Failed password for invalid user aaa from 203.0.113.243 port 51723 ssh2
+Nov 20 15:30:29 server sshd[22802]: Failed password for invalid user security from 203.0.113.243 port 39677 ssh2
+Nov 20 15:30:37 server sshd[24321]: Failed password for invalid user amit from 203.0.113.243 port 39361 ssh2
+Nov 20 15:30:46 server sshd[21323]: Failed password for root from 203.0.113.243 port 44923 ssh2
